@@ -1,0 +1,45 @@
+.sidebar {
+  width: 240px;
+  background: #111827;
+  color: white;
+  min-height: calc(100vh - 64px);
+  padding: 20px;
+  border-right: 1px solid #00e5ff;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  margin-bottom: 8px;
+}
+
+.link,
+.disabled {
+  display: block;
+  padding: 14px 10px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.link {
+  cursor: pointer;
+}
+
+.link:hover {
+  background: #1f2937;
+}
+
+.active {
+  background: rgba(0, 229, 255, 0.12);
+  color: #00e5ff;
+  border: 1px solid rgba(0, 229, 255, 0.4);
+}
+
+.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
