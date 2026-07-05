@@ -5,7 +5,19 @@ import type { Mission } from "../../types/models";
 import styles from "./Missions.module.css";
 import { useApp } from "../../app/providers/useApp";
 
-function Missions() {
+function formatMissionStatus(status: Mission["status"]): string {
+  const labels = {
+    disponivel: "Disponível",
+    em_andamento: "Em andamento",
+    concluida: "Concluída",
+    conclusao: "Concluída",
+  };
+
+  return labels[status];
+}
+
+function Missions(){
+
   const { setZerion } = useApp();
 
   const [missions, setMissions] = useState<Mission[]>([]);
@@ -68,7 +80,7 @@ function Missions() {
             </div>
 
             <div className={styles.meta}>
-              <span>Status: {mission.status}</span>
+             <span>Status: {formatMissionStatus(mission.status)}</span>
               <strong>+{mission.rewardExp} EXP</strong>
             </div>
             {mission.status === "disponivel" && (
