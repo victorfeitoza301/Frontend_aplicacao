@@ -5,7 +5,7 @@ import styles from "./Sidebar.module.css";
 const links = [
   { to: "/dashboard", label: "🤖 Meu Zerion", ready: true },
   { to: "/chat", label: "💬 Chat", ready: true },
-  { to: "/missoes", label: "🎯 Missões", ready: false },
+  { to: "/missoes", label: "🎯 Missões", ready: true },
   { to: "/arena", label: "⚔️ Arena", ready: false },
   { to: "/inventario", label: "🎒 Inventário", ready: false },
   { to: "/perfil", label: "👤 Perfil", ready: false },
