@@ -1,3 +1,4 @@
+import Profile from "../../pages/Profile";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import MainLayout from "../layouts/MainLayout";
@@ -37,6 +38,16 @@ function AppRouter() {
             <ProtectedRoute>
               <MainLayout>
                 <Chat />
+              </MainLayout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/perfil"
+          element={
+            <ProtectedRoute>
+              <MainLayout>
+                <Profile />
               </MainLayout>
             </ProtectedRoute>
           }

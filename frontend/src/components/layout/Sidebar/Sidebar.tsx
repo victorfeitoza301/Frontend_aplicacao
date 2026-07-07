@@ -8,7 +8,7 @@ const links = [
   { to: "/missoes", label: "🎯 Missões", ready: false },
   { to: "/arena", label: "⚔️ Arena", ready: false },
   { to: "/inventario", label: "🎒 Inventário", ready: false },
-  { to: "/perfil", label: "👤 Perfil", ready: false },
+  { to: "/perfil", label: "👤 Perfil", ready: true },
 ];
 
 function Sidebar() {
