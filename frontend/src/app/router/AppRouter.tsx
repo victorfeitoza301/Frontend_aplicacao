@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-
+import Inventory from "../../pages/Inventory";
 import MainLayout from "../layouts/MainLayout";
 import ProtectedRoute from "../../components/routing/ProtectedRoute";
 
@@ -40,6 +40,16 @@ function AppRouter() {
               </MainLayout>
             </ProtectedRoute>
           }
+        />
+        <Route
+          path="/inventario"
+          element={
+            <ProtectedRoute>
+              <MainLayout>
+                 <Inventory />
+              </MainLayout>
+            </ProtectedRoute>
+        }
         />
 
         {/* Qualquer outra rota volta para a raiz */}
