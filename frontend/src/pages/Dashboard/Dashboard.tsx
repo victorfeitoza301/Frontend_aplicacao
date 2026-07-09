@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+import { useApp } from "../../app/providers/useApp";
 import Card from "../../components/ui/Card";
 import Badge from "../../components/ui/Badge";
 import StatBar from "../../components/ui/StatBar";
@@ -18,15 +19,20 @@ function formatDate(iso: string): string {
 }
 
 function Dashboard() {
+  const { zerion, setZerion } = useApp();
+
   const [data, setData] = useState<DashboardData | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    api
-      .getDashboard()
-      .then(setData)
-      .catch((e) => setError(e.message));
-  }, []);
+  api
+    .getDashboard()
+    .then((dashboard) => {
+      setData(dashboard);
+      setZerion(dashboard.zerion);
+    })
+    .catch((e) => setError(e.message));
+}, [setZerion]);
 
   if (error) {
     return <div className={styles.state}>Erro ao carregar: {error}</div>;
@@ -36,7 +42,7 @@ function Dashboard() {
     return <div className={styles.state}>Conectando ao Zerion...</div>;
   }
 
-  const z = data.zerion;
+  const z = zerion ?? data.zerion;
 
   return (
     <div className={styles.page}>
