@@ -8,6 +8,7 @@ import Login from "../../pages/Login/Login";
 import Register from "../../pages/Register";
 import Dashboard from "../../pages/Dashboard/Dashboard";
 import Chat from "../../pages/Chat";
+import Missions from "../../pages/Missions";
 
 function AppRouter() {
   return (
@@ -41,7 +42,7 @@ function AppRouter() {
               </MainLayout>
             </ProtectedRoute>
           }
-        />
+          />
         <Route
           path="/perfil"
           element={
@@ -52,7 +53,16 @@ function AppRouter() {
             </ProtectedRoute>
           }
         />
-
+        /><Route
+  path="/missoes"
+  element={
+    <ProtectedRoute>
+      <MainLayout>
+        <Missions />
+      </MainLayout>
+    </ProtectedRoute>
+  }
+/>
         {/* Qualquer outra rota volta para a raiz */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
