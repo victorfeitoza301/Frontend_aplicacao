@@ -1,3 +1,4 @@
+import Profile from "../../pages/Profile";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Inventory from "../../pages/Inventory";
 import MainLayout from "../layouts/MainLayout";
@@ -7,6 +8,7 @@ import Login from "../../pages/Login/Login";
 import Register from "../../pages/Register";
 import Dashboard from "../../pages/Dashboard/Dashboard";
 import Chat from "../../pages/Chat";
+import Missions from "../../pages/Missions";
 
 function AppRouter() {
   return (
@@ -40,7 +42,18 @@ function AppRouter() {
               </MainLayout>
             </ProtectedRoute>
           }
+          />
+        <Route
+          path="/perfil"
+          element={
+            <ProtectedRoute>
+              <MainLayout>
+                <Profile />
+              </MainLayout>
+            </ProtectedRoute>
+          }
         />
+
         <Route
           path="/inventario"
           element={
@@ -52,7 +65,16 @@ function AppRouter() {
         }
         />
 
-        {/* Qualquer outra rota volta para a raiz */}
+      <Route
+  path="/missoes"
+  element={
+    <ProtectedRoute>
+      <MainLayout>
+        <Missions />
+      </MainLayout>
+    </ProtectedRoute>
+  }
+/>   
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
