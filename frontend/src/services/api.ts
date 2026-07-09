@@ -6,6 +6,7 @@ import type {
   SendMessageResponse,
   Operator,
   AuthResponse,
+  InventoryItem,
 } from "../types/models";
 
 // URL base da API. Configure em .env com VITE_API_URL.
@@ -71,6 +72,8 @@ export const api = {
   getZerion: () => request<Zerion>("/zerion"),
   getProfile: () =>
   request<{ operator: Operator; zerion: Zerion }>("/profile"),
+
+  getInventory: () => request<InventoryItem[]>("/inventory"),
 
   getMissions: () => request<Mission[]>("/missions"),
   completeMission: (id: number) =>

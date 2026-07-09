@@ -85,3 +85,21 @@ export type AuthResponse = {
   token: string;
   operator: Operator;
 };
+
+export type InventoryRarity =
+  | "comum"
+  | "raro"
+  | "epico"
+  | "lendario"
+  | "singular";
+
+export type InventoryItem = {
+  id: number;
+  zerionId: number;
+  name: string;
+  description: string;
+  rarity: InventoryRarity;
+  quantity: number;
+  createdAt: string;
+  updatedAt: string;
+};

@@ -1,6 +1,6 @@
 import Profile from "../../pages/Profile";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-
+import Inventory from "../../pages/Inventory";
 import MainLayout from "../layouts/MainLayout";
 import ProtectedRoute from "../../components/routing/ProtectedRoute";
 
@@ -53,7 +53,19 @@ function AppRouter() {
             </ProtectedRoute>
           }
         />
-        /><Route
+
+        <Route
+          path="/inventario"
+          element={
+            <ProtectedRoute>
+              <MainLayout>
+                 <Inventory />
+              </MainLayout>
+            </ProtectedRoute>
+        }
+        />
+
+      <Route
   path="/missoes"
   element={
     <ProtectedRoute>
@@ -62,8 +74,7 @@ function AppRouter() {
       </MainLayout>
     </ProtectedRoute>
   }
-/>
-        {/* Qualquer outra rota volta para a raiz */}
+/>   
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
