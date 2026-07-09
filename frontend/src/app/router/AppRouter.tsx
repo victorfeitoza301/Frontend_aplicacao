@@ -1,3 +1,4 @@
+import Profile from "../../pages/Profile";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import MainLayout from "../layouts/MainLayout";
@@ -41,6 +42,17 @@ function AppRouter() {
               </MainLayout>
             </ProtectedRoute>
           }
+          />
+        <Route
+          path="/perfil"
+          element={
+            <ProtectedRoute>
+              <MainLayout>
+                <Profile />
+              </MainLayout>
+            </ProtectedRoute>
+          }
+        />
         /><Route
   path="/missoes"
   element={
@@ -51,7 +63,6 @@ function AppRouter() {
     </ProtectedRoute>
   }
 />
-
         {/* Qualquer outra rota volta para a raiz */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

@@ -69,6 +69,8 @@ export const api = {
   // ---- Dados ----
   getDashboard: () => request<Dashboard>("/dashboard"),
   getZerion: () => request<Zerion>("/zerion"),
+  getProfile: () =>
+  request<{ operator: Operator; zerion: Zerion }>("/profile"),
 
   getMissions: () => request<Mission[]>("/missions"),
   completeMission: (id: number) =>
