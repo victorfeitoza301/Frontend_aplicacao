@@ -7,7 +7,7 @@ const links = [
   { to: "/chat", label: "💬 Chat", ready: true },
   { to: "/missoes", label: "🎯 Missões", ready: true },
   { to: "/arena", label: "⚔️ Arena", ready: false },
-  { to: "/inventario", label: "🎒 Inventário", ready: false },
+  { to: "/inventario", label: "🎒 Inventário", ready: true },
   { to: "/perfil", label: "👤 Perfil", ready: true },
 ];
 
