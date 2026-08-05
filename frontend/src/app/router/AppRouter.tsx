@@ -1,6 +1,5 @@
-import Profile from "../../pages/Profile";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Inventory from "../../pages/Inventory";
+
 import MainLayout from "../layouts/MainLayout";
 import ProtectedRoute from "../../components/routing/ProtectedRoute";
 
@@ -9,6 +8,9 @@ import Register from "../../pages/Register";
 import Dashboard from "../../pages/Dashboard/Dashboard";
 import Chat from "../../pages/Chat";
 import Missions from "../../pages/Missions";
+import Inventory from "../../pages/Inventory";
+import Profile from "../../pages/Profile";
+import Game from "../../pages/Game";
 
 function AppRouter() {
   return (
@@ -53,6 +55,15 @@ function AppRouter() {
             </ProtectedRoute>
           }
         />
+<Route
+    path="/game"
+    element={
+        <ProtectedRoute>
+            <Game />
+        </ProtectedRoute>
+    }
+/>
+
 
         <Route
           path="/inventario"
